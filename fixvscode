@@ -1,0 +1,30 @@
+#!/bin/bash
+
+CSSPath="/home/developer/.local/opt/vscode/resources/app/out/vs/workbench/workbench.main.css"
+
+FontWorkbench="SFNS Display"
+FontDebug="Roboto Medium"
+
+sed -s -i s/"\-apple\-system"/"$FontWorkbench"/g $CSSPath
+#sudo sed -s -i s/10px/13px/g $CSSPath
+#sudo sed -s -i s/10px/11px/g $CSSPath
+#sudo sed -s -i s/10px/11px/g $CSSPath
+
+#sudo sed -s -i s/"font\-size\:11px"/"font\-size\:12px"/g $CSSPath
+#sudo sed -s -i s/"font\-size\:12px"/"font\-size\:13px"/g $CSSPath
+#sudo sed -s -i s/"font\-size\:13px"/"font\-size\:14px"/g $CSSPath
+#sudo sed -s -i s/"font\-size\:14px"/"font\-size\:15px"/g $CSSPath
+sed -s -i s/"editor-container{"/"editor-container{-webkit-font-smoothing:antialiased;"/g $CSSPath
+
+#sudo echo ".explorer-viewlet .panel-body { font-weight: 700 !important }" >> $CSSPath
+#sudo echo ".explorer-viewlet .panel-body { text-shadow: 1px 1px black }" >> $CSSPath
+echo ".statusbar { font-weight: 700 !important }" >> $CSSPath
+echo ".composite.title { font-weight: 700 !important }" >> $CSSPath
+#sudo echo ".tabs-container { font-weight: 700 !important }" >> $CSSPath
+echo ".badge-content { font-weight: 700 !important }" >> $CSSPath
+#sudo echo "*{text-shadow:1px 1px black}" >> $CSSPath
+
+#echo ".monaco-panel-view {font-weight:bold}" >> $CSSPath
+#echo ".monaco-workbench>.part>.title {font-weight:bold}" >> $CSSPath
+
+echo ".monaco-shell {-webkit-text-stroke: .36px;}" >> $CSSPath

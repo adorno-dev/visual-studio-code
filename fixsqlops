@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CSSPath="/opt/sqlops/resources/app/out/vs/workbench/workbench.main.css"
+
+FontWorkbench="SFNS Display"
+FontDebug="Roboto Medium"
+
+sed -s -i s/"\-apple\-system"/"$FontWorkbench"/g $CSSPath
+sed -s -i s/"editor-container{"/"editor-container{-webkit-font-smoothing:antialiased;"/g $CSSPath
+echo ".statusbar { font-weight: 700 !important }" >> $CSSPath
+echo ".composite.title { font-weight: 700 !important }" >> $CSSPath
+echo ".badge-content { font-weight: 700 !important }" >> $CSSPath
+echo ".monaco-shell {-webkit-text-stroke: .36px;}" >> $CSSPath
